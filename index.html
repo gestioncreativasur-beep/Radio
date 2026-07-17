@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Bitácora Sur Radio</title>
+<title>Latitud 39°</title>
 
 <style>
 
@@ -120,6 +120,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 font-size:25px;
+cursor:pointer;
 }
 
 /* COVER */
@@ -252,9 +253,11 @@ BITÁCORA SUR
 LIVE
 </div>
 
-<div class="play">
+<div class="play" onclick="playRadio()">
 ▶
 </div>
+
+<audio id="radio" src="https://stream.zeno.fm/qt8bhhhy9xotv"></audio>
 
 </div>
 
@@ -318,7 +321,7 @@ SHOWS
 <div class="footer">
 
 <div>
-<b>BITÁCORA SUR</b><br>
+<b>Latitud 39°</b><br>
 <span class="small">LICANRAY ˅</span>
 </div>
 
@@ -332,6 +335,31 @@ CONNECTED ˅
 
 
 </div>
+
+
+<script>
+
+function playRadio(){
+
+const radio = document.getElementById("radio");
+const boton = document.querySelector(".play");
+
+if(radio.paused){
+
+radio.play();
+boton.innerHTML="❚❚";
+
+}else{
+
+radio.pause();
+boton.innerHTML="▶";
+
+}
+
+}
+
+</script>
+
 
 </body>
 </html>
